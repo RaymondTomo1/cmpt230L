@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <div class="text-bar">
+    <a href="index.html">Home</a>
+    <a href="Loginpage.html">Login</a>
+    <a href="Signuppage.html">Sign Up</a>
+    <a href="UserBalances.html">Your Balances</a>
+    </div>
+  <br>
+  <br>
+<center><b>Sign Up Page</b></center>
+<br>
+<br>
+<center>
+  <p>Type down below to sign up!</p><br>
+  <label for="email">Email:</label><br>
+  <input id="email" type="text" placeholder="Email"><br>
+  <label for="password">Password:</label><br>
+  <input id="password" type="password" placeholder="Password">
+  <br><button onclick="setLoginCredentials()">Sign Up!</button>
+<script>
+  {
+  let userEmails = [];
+  let userPasswords = [];    
+  let arrayPlacement = 0;        
+   // placer = sessionStorage.getItem("TrackArray").value;
+   // alert(arrayPlacement);
+  if(document.getElementById("email").value.length == 0 || document.getElementById("password").value.length == 0)
+    {
+    }
+    else
+    {
+    signUp_email = document.getElementById("email").value;
+    signUp_password = document.getElementById("password").value;
+    userEmails[arrayPlacement] = signUp_email;
+    userPasswords[arrayPlacement] = signUp_password;
+    sessionStorage.setItem("Email", JSON.stringify(userEmails));
+    sessionStorage.setItem("Password", JSON.stringify(userPasswords));
+    location.href = 'Loginpage.html';
+  }
+}
+ </script>
+
+<br>
+<br>
+<style>
+.text-bar {
+  background-color: #333;
+  overflow: hidden;
+}
+
+
+.text-bar a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+
+.text-bar a:hover {
+  background-color: #ddd;
+  color: rgb(194, 14, 14);
+}
+
+
+.text-bar a.active {
+  background-color: rgb(36, 1, 1);
+  color: white;
+}
+</style>
+</html>
